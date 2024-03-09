@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 50px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Days Between Dates</h1>
+        <label for="date1">Start Date:</label>
+        <input type="date" id="date1">
+
+        <label for="date2">End Date:</label>
+        <input type="date" id="date2">
+
+        <button onclick="calculateDifference()">Calculate</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateDaysBetweenDates(date1, date2) {
+            const oneDay = 24 * 60 * 60 * 1000;
+            const firstDate = new Date(date1);
+            const secondDate = new Date(date2);
+            const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+            return diffDays;
+        }
+
+        function calculateDifference() {
+            const date1Input = document.getElementById('date1');
+            const date2Input = document.getElementById('date2');
+            const resultParagraph = document.getElementById('result');
+
+            const days = calculateDaysBetweenDates(date1Input.value, date2Input.value);
+            resultParagraph.textContent = "Difference: " + days + " days";
+        }
+    </script>
+</body>
+</html>
