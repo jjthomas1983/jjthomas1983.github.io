@@ -1,9 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title> Hello World </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Page for Kids</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffcccb; /* Light pink background */
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333; /* Dark text color */
+      margin-top: 50px;
+    }
+
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 50px;
+    }
+
+    .fun-element {
+      margin: 20px;
+      padding: 20px;
+      background-color: #ffad60; /* Light orange */
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .fun-element:hover {
+      background-color: #ffc080; /* Darker orange on hover */
+    }
+  </style>
 </head>
 <body>
-  <h1> Hello, Jerry's World !!</h1>
+
+  <h1>Welcome to the Fun Page!</h1>
+
+  <div id="content">
+    <div class="fun-element" onclick="showMessage('Hello, Kids!')">Click Me</div>
+    <div class="fun-element" onclick="showMessage('Have a great day!')">Another One</div>
+    <div class="fun-element" onclick="showMessage('Let the fun begin!')">Try Me Too</div>
+  </div>
+
+  <script>
+    function showMessage(message) {
+      alert(message);
+    }
+  </script>
+
 </body>
 </html>
